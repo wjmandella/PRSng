@@ -1,0 +1,59 @@
+<app-menu></app-menu>
+<div>
+</div><div class='component-content'>
+	<div>
+	  <span class='component-title'>[{{title}}]</span>
+			<span><a routerLink='/vendor/create'><img id='createnew' width='20'
+				height="20" src='assets/add-new.png' title='Create new vendor'></a>
+			</span>
+	  <span><a routerLink='/vendor/list'>Back to vendor list</a></span>		
+</div>
+<div>
+<p *ngIf='!vendor'>Loading ...</p>
+
+<div *ngIf='vendor'>
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for='vendorcode'>Vendor code:</label>
+		<input [(ngModel)]='vendor.Code' name='Code' type='text' class='form-control col-sm-6' id='vendorcode' aria-describedby='emailHelp' placeholder="Vendor Code">
+	</div>
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for='vendorname'>Vendor name:</label>
+		<input [(ngModel)]='vendor.Name' name='Name' type='text' class='form-control col-sm-6' id='vendorname' aria-describedby='emailHelp' placeholder="Vendor Name">
+	</div>
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for='vendoraddress'>Vendor address:</label>
+		<input [(ngModel)]='vendor.Address' name='Address' type='text' class='form-control col-sm-6' id='vendoraddress' aria-describedby='emailHelp' placeholder="Vendor address">
+	</div>	
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for=''>City:</label>
+		<input [(ngModel)]='vendor.City' name='City' type='text' class='form-control col-sm-6' id='vendorcity' aria-describedby='emailHelp' placeholder="Vendor city">
+	</div>	
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for=''>State:</label>
+		<input [(ngModel)]='vendor.State' name='State' type='text' class='form-control col-sm-6' id='vendorstate' aria-describedby='emailHelp' placeholder="Vendor state">
+	</div>	
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for=''>Zip:</label>
+		<input [(ngModel)]='vendor.Zip' name='Zip' type='text' class='form-control col-sm-6' id='vendorzip' aria-describedby='emailHelp' placeholder="Zip">
+	</div>	
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for=''>Phone number:</label>
+		<input [(ngModel)]='vendor.Phone' name='Phone' type='text' class='form-control col-sm-6' id='vendorphone' aria-describedby='emailHelp' placeholder="Phone number (xxx-xxx-xxxx)">
+	</div>			
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for=''>Email:</label>
+		<input [(ngModel)]='vendor.Email' name='Email' type='text' class='form-control col-sm-6' id='email' aria-describedby='emailHelp' placeholder="Email address">
+	</div>				
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for='userreviewer'>PreApproved?:</label>
+		<input [(ngModel)]='vendor.PreApproved' name='PreApproved' type='checkbox' class='form-control col-sm-6 inputcheckbox' id='vednorpreapproved' aria-describedby='emailHelp' placeholder="PreApproved">
+	</div>
+	<div class='form-group'>
+		<button (click)='create()' class='btn btn-primary' title='Create'>Create Vendor</button>
+	</div>	
+</div>
+</div>
+</div>
+
+
+

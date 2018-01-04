@@ -1,0 +1,28 @@
+<app-menu></app-menu>
+<div class='component-content'>
+	<div class=''>
+		<div class='lefthalf'>
+			<span class='component-title'>[{{title}}]</span>
+			<span><a routerLink='/vendor/create'>create new vendor<!-- <img id='createnew' width='20'
+				height="20" src=> --></a>
+			</span>
+	  <span><a routerLink='/vendor/list'>Back to vendor list</a></span>					
+		</div>
+<div>		
+<table *ngIf='vendor' class="table table-sm">
+	<tr>ID:<td>{{vendor.Id}}</td></tr>
+	<tr>Code:<td>{{vendor.Code}}</td></tr>
+	<tr>Name:<td>{{vendor.Name}}</td></tr>
+	<tr>Address:<td>{{vendor.Address}}</td></tr>
+	<tr>City:<td>{{vendor.City}}</td></tr>				
+	<tr>State:<td>{{vendor.State}}</td></tr>
+	<tr>Zip:<td>{{vendor.Zip}}</td></tr>
+	<tr>Phone:<td>{{vendor.Phone}}</td></tr>
+	<tr>Email:<td>{{vendor.Email}}</td></tr>
+	<tr>Preapproved?:<td>{{vendor.Active ? "YES" : "NO"}}</td></tr>
+	<tr><td colspan="2">
+		<a routerLink='/vendor/edit/{{vendor.Id}}' class='btn btn-primary' title='Edit'>Edit</a>
+		<button (click)="remove()" class='btn btn-danger' title='Delete'>Remove</button>
+	</td></tr>			
+</table>		
+</div>
