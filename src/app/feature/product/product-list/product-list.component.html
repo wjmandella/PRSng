@@ -29,16 +29,14 @@
 		<th>Name</th>
 		<th>Price</th>
 		<th>Unit</th>
-		<th>PhotoPath</th>
 	</tr>
 	<tr *ngFor='let product of products | sort:selectedSortKey:sortDesc'>
 		<td>{{product.Id}}</td>
-		<td>{{product.VendorID}}</td>
+		<td>{{product.VendorName}}</td>
 		<td>{{product.PartNumber}}</td>
 		<td>{{product.Name}}</td>
 		<td>${{product.Price}}</td>
 		<td>{{product.Unit}}</td>		
-		<td>{{product.PhotoPath}}</td>
 		<td class='actions'>
 		 <a routerLink='/product/detail/{{product.Id}}'><img src='assets/details.png' title='Details'></a>
 		 <a routerLink='/product/edit/{{product.Id}}'><img src='assets/edit.png' title='Edit'></a>

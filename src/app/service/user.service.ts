@@ -9,11 +9,11 @@ const url = 'http://localhost:8080/Users/';
 @Injectable()
 export class UserService {
 
-	// users: User[];
+	users: User[];
 
-	// authenticate(user: User): Observable<User[]> {
-	// 	return this.http.post(url+"Authenticate", user) as Observable<User[]>;
-	// }
+	authenticate(username: string, password: string): Observable<User[]> {
+		return this.http.get(url+"Authenticate?username="+username+"&password="+password) as Observable<User[]>;
+	}
 
 	list(): Observable<User[]> {
 		return this.http.get(url+"List") as Observable<User[]>;

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from '@svc/product.service';
 import { Product } from '@model/product';
+import { VendorService } from '@svc/vendor.service';
+import { Vendor } from '@model/vendor';
+
 
 @Component({
   selector: 'app-product-edit',
@@ -16,6 +19,7 @@ export class ProductEditComponent implements OnInit {
 	resp: any;
 
 	product: Product;
+	vendors: Vendor[];
 
 	change() {
 		console.log("this.product.id", this.product);
@@ -28,8 +32,13 @@ export class ProductEditComponent implements OnInit {
 			});
 	}
 
+  compareFn(v1: number, v2: number): boolean {
+    // console.log("compareFn", v1, v2);
+  	return v1 == v2;
+  }	
 
   constructor(private ProductSvc: ProductService,
+  			  private VendorSvc: VendorService,
   			  private router: Router,
   			  private route: ActivatedRoute) { }
 
@@ -39,7 +48,8 @@ export class ProductEditComponent implements OnInit {
   			.subscribe(products => { 
   				this.product = products.length > 0? products[0] : null;
   				console.log(this.product);
-  		});
-  }
+  		this.VendorSvc.list()
+  			.subscribe(vendors => this.vendors = vendors);		
+  		}
+  	}
 
-}

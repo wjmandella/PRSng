@@ -16,16 +16,28 @@ import { UserService } from './service/user.service';
 import { UserDetailComponent } from './feature/user/user-detail/user-detail.component';
 import { UserCreateComponent } from './feature/user/user-create/user-create.component';
 import { UserEditComponent } from './feature/user/user-edit/user-edit.component';
+import { UserLoginComponent } from './feature/user/user-login/user-login.component';
+
 import { VendorCreateComponent } from './feature/vendor/vendor-create/vendor-create.component';
 import { VendorDetailComponent } from './feature/vendor/vendor-detail/vendor-detail.component';
 import { VendorEditComponent } from './feature/vendor/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './feature/vendor/vendor-list/vendor-list.component';
 import { VendorService } from './service/vendor.service';
+
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 import { ProductListComponent } from './feature/product/product-list/product-list.component';
 import { ProductService } from './service/product.service';
+
+import { PurchaseRequestEditComponent } from './feature/purchaserequest/purchaserequest-edit/purchaserequest-edit.component';
+import { PurchaseRequestCreateComponent } from './feature/purchaserequest/purchaserequest-create/purchaserequest-create.component';
+import { PurchaseRequestDetailComponent } from './feature/purchaserequest/purchaserequest-detail/purchaserequest-detail.component';
+import { PurchaseRequestListComponent } from './feature/purchaserequest/purchaserequest-list/purchaserequest-list.component';
+import { PurchaseRequestService } from './service/purchaserequest.service';
+
+import { SystemService } from './service/system.service';
+
 
 @NgModule({
   declarations: [
@@ -36,6 +48,7 @@ import { ProductService } from './service/product.service';
     UserDetailComponent,
     UserCreateComponent,
     UserEditComponent,
+    UserLoginComponent,
     VendorCreateComponent,
     VendorDetailComponent,
     VendorEditComponent,
@@ -43,7 +56,11 @@ import { ProductService } from './service/product.service';
     ProductCreateComponent,
     ProductDetailComponent,
     ProductEditComponent,
-    ProductListComponent
+    ProductListComponent,
+    PurchaseRequestEditComponent,
+    PurchaseRequestCreateComponent,
+    PurchaseRequestDetailComponent,
+    PurchaseRequestListComponent
    ],
   imports: [
     BrowserModule,
@@ -54,7 +71,9 @@ import { ProductService } from './service/product.service';
   providers: [
   	UserService,
     VendorService,
-    ProductService],
+    ProductService,
+    SystemService,
+    PurchaseRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
