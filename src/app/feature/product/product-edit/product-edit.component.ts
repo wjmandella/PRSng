@@ -50,6 +50,6 @@ export class ProductEditComponent implements OnInit {
   				console.log(this.product);
   		this.VendorSvc.list()
   			.subscribe(vendors => this.vendors = vendors);		
-  		}
+  		});
   	}
-
+}
