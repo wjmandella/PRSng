@@ -5,6 +5,8 @@ import { ProductService } from '@svc/product.service';
 import { Product } from '@model/product';
 import { VendorService } from '@svc/vendor.service';
 import { Vendor } from '@model/vendor';
+import { UserService } from '@svc/user.service';
+import { User } from '@model/user';
 
 @Component({
   selector: 'app-purchaserequest-list',
@@ -13,7 +15,7 @@ import { Vendor } from '@model/vendor';
 })
 export class PurchaseRequestListComponent implements OnInit {
 
-title: string = 'PurchaseRequest List';
+  title: string = 'PurchaseRequest List';
 	selectedSortKey: string = 'id'; //default sort
 	sortDesc: string = 'asc'; // can use 'desc' for descending sort
 	sortKeys: string[] = PurchaseRequest.sortableKeys;
@@ -21,16 +23,18 @@ title: string = 'PurchaseRequest List';
 	purchaserequests: PurchaseRequest[]; 
   	vendors: Vendor[];
   	products: Product[];
+    users: User[];
 
   constructor(private PurchaseRequestSvc: PurchaseRequestService,
               private VendorSvc: VendorService,
-              private ProductSvc: ProductService) { }
+              private ProductSvc: ProductService,
+              private UserSvc: UserService) { }
 
   ngOnInit() {
   	this.PurchaseRequestSvc.list()
   		.subscribe(purchaserequests => {
   			this.purchaserequests = purchaserequests;
-    this.addVendorName(this.purchaserequests);  
+    // this.addVendorName(this.purchaserequests);  
   			console.log(purchaserequests);
       });
   }
@@ -44,6 +48,27 @@ title: string = 'PurchaseRequest List';
  //         });
  //      //console.log("VendorName Retreived is " + prod.VendorName);
  //     }
-  }
+  // }
+    //  addUserName(prs: PurchaseRequest[]) {
+    //    for(let user of this.users) {
+    //       this.UserSvc.get(user.ID)
+    //        .subscribe(vendors => { pr.UserName = users[0].Name;
+    //          console.log(pr);
+    //        });
+    //    }
+    // }
 
+ //   products: Product[];
+ //  vendors: Vendor[];
+     
+ // addVendorName(prods: Product[]) {
+ //   for(let prod of prods) {
+ //      // console.log("Getting Vendor Name for VendorId: " + prod.cVendorID);
+ //      this.VendorSvc.get(prod.VendorID)
+ //       .subscribe(vendors => { prod.VendorName = vendors[0].Name;
+ //           console.log(prod);
+ //         });
+ //      //console.log("VendorName Retreived is " + prod.VendorName);
+ //     }
+ //  }    
 }

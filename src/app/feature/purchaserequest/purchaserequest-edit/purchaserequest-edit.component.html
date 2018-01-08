@@ -1,3 +1,68 @@
-<p>
-  purchaserequest-edit works!
-</p>
+<app-menu></app-menu>
+<div>
+</div><div class='component-content'>
+	<div>
+	  <span class='component-title'>[{{title}}]</span>
+			<span><a routerLink='/purchaserequest/create'><img id='createnew' width='20'
+				height="20" src='assets/add-new.png' title='Create new purchaserequest'></a>
+			</span>
+	  <span><a routerLink='/purchaserequest/list'>Back to list</a></span>		
+</div>
+<div>
+<p *ngIf='!purchaserequest'>Loading ...</p>
+
+<div *ngIf='purchaserequest'>
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for='purchaserequestid'>ID:</label>
+		<input [(ngModel)]='purchaserequest.ID' name='ID' type='text' class='form-control col-sm-6' id='purchaserequestid' aria-describedby='emailHelp' placeholder="ID">
+		<small id='emailHelp' class='form-text text-muted col-sm-2'>ID</small>
+	</div>
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for='purchaserequestjustification'>Justification:</label>
+		<input [(ngModel)]='purchaserequest.Justification' name='Justification' type='text' class='form-control col-sm-6' id='justification' aria-describedby='emailHelp' placeholder="Justification">
+		<small id='idHelp' class='form-text text-muted col-sm-2'>Justification</small>
+	</div>
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for=''>Username:</label>
+		<input [(ngModel)]='purchaserequest.UserName' name='UserName' type='text' class='form-control col-sm-6' id='purchaserequestname' aria-describedby='emailHelp' placeholder="Username">
+		<small id='emailHelp' class='form-text text-muted col-sm-2'>The purchaserequestname</small>
+	</div>	
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for=''>Password:</label>
+		<input [(ngModel)]='purchaserequest.Password' name='Password' type='text' class='form-control col-sm-6' id='password' aria-describedby='emailHelp' placeholder="Password">
+		<small id='emailHelp' class='form-text text-muted col-sm-2'>The password</small>
+	</div>	
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for=''>Phone number:</label>
+		<input [(ngModel)]='purchaserequest.Phone' name='Phone' type='text' class='form-control col-sm-6' id='phone' aria-describedby='emailHelp' placeholder="Phone number (xxx-xxx-xxxx)">
+		<small id='emailHelp' class='form-text text-muted col-sm-2'>The phone number</small>
+	</div>	
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for=''>Email:</label>
+		<input [(ngModel)]='purchaserequest.Email' name='Email' type='text' class='form-control col-sm-6' id='email' aria-describedby='emailHelp' placeholder="Email address">
+		<small id='emailHelp' class='form-text text-muted col-sm-2'>The phone number</small>
+	</div>				
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for='purchaserequestadmin'>Admin:</label>
+		<input [(ngModel)]='purchaserequest.Admin' name='Admin' type='checkbox' class='form-control col-sm-6 inputcheckbox' id='purchaserequestadmin' aria-describedby='emailHelp' placeholder="Admin">
+		<small id='emailHelp' class='form-text text-muted col-sm-2'>Admin authority</small>
+	</div>
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for='purchaserequestreviewer'>Reviewer:</label>
+		<input [(ngModel)]='purchaserequest.Reviewer' name='Admin' type='checkbox' class='form-control col-sm-6 inputcheckbox' id='purchaserequestreviewer' aria-describedby='emailHelp' placeholder="Reviewer">
+		<small id='emailHelp' class='form-text text-muted col-sm-2'>Reviewer authority</small>
+	</div>
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for='purchaserequestreviewer'>Active:</label>
+		<input [(ngModel)]='purchaserequest.Active' name='Active' type='checkbox' class='form-control col-sm-6 inputcheckbox' id='purchaserequestactive' aria-describedby='emailHelp' placeholder="Active">
+		<small id='emailHelp' class='form-text text-muted col-sm-2'>Active</small>
+	</div>	
+	<div class='form-group'>
+		<button (click)='change()' class='btn btn-primary' title='Update'>Update</button>
+	</div>	
+</div>
+</div>
+</div>
+
+
+

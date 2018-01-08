@@ -36,8 +36,15 @@ import { PurchaseRequestDetailComponent } from './feature/purchaserequest/purcha
 import { PurchaseRequestListComponent } from './feature/purchaserequest/purchaserequest-list/purchaserequest-list.component';
 import { PurchaseRequestService } from './service/purchaserequest.service';
 
-import { SystemService } from './service/system.service';
 
+import { PurchaseRequestLineItemCreateComponent } from './feature/purchaserequestlineitem/purchaserequestlineitem-create/purchaserequestlineitem-create.component';
+import { PurchaseRequestLineItemDetailComponent } from './feature/purchaserequestlineitem/purchaserequestlineitem-detail/purchaserequestlineitem-detail.component';
+import { PurchaseRequestLineItemEditComponent } from './feature/purchaserequestlineitem/purchaserequestlineitem-edit/purchaserequestlineitem-edit.component';
+import { PurchaseRequestLineItemListComponent } from './feature/purchaserequestlineitem/purchaserequestlineitem-list/purchaserequestlineitem-list.component';
+import { PurchaseRequestLineItemService } from './service/purchaserequestlineitem.service';
+
+import { StatusService } from './service/status.service';
+import { SystemService } from './service/system.service';
 
 @NgModule({
   declarations: [
@@ -60,7 +67,11 @@ import { SystemService } from './service/system.service';
     PurchaseRequestEditComponent,
     PurchaseRequestCreateComponent,
     PurchaseRequestDetailComponent,
-    PurchaseRequestListComponent
+    PurchaseRequestListComponent,
+    PurchaseRequestLineItemCreateComponent,
+    PurchaseRequestLineItemDetailComponent,
+    PurchaseRequestLineItemEditComponent,
+    PurchaseRequestLineItemListComponent
    ],
   imports: [
     BrowserModule,
@@ -73,7 +84,9 @@ import { SystemService } from './service/system.service';
     VendorService,
     ProductService,
     SystemService,
-    PurchaseRequestService],
+    PurchaseRequestService,
+    PurchaseRequestLineItemService,
+    StatusService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

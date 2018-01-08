@@ -1,3 +1,53 @@
-<p>
-  purchaserequest-create works!
-</p>
+<app-menu></app-menu>
+<div>
+</div><div class='component-content'>
+	<div>
+	  <span class='component-title'>[{{title}}]</span>
+			<span><a routerLink='/purchaserequest/create'><img id='createnew' width='20'
+				height="20" src='assets/add-new.png' title='Create new purchaserequest'></a>
+			</span>
+	  <span><a routerLink='/purchaserequest/list'>Back to list</a></span>		
+</div>
+<div>
+<p *ngIf='!purchaserequest'>Loading ...</p>
+
+<div *ngIf='purchaserequest'>
+<!-- 	<div>User ID:</div> -->
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for='partnumber'>User ID:</label>
+		<input [(ngModel)]='purchaserequest.UserID' name='UserID' type='text' class='form-control col-sm-6' id='pruserid' aria-describedby='emailHelp' placeholder="User ID">
+	</div>	
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for='purchaserequestvendorid'>Description:</label>
+		<input [(ngModel)]='purchaserequest.Description' name='Description' type='text' class='form-control col-sm-6' id='prdescription' aria-describedby='emailHelp' placeholder="Description">
+	</div>
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for='partnumber'>Justification:</label>
+		<input [(ngModel)]='purchaserequest.Justification' name='Justification' type='text' class='form-control col-sm-6' id='prjustification' aria-describedby='emailHelp' placeholder="Justification">
+	</div>
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for=''>Date Needed:</label>
+		<input [(ngModel)]='purchaserequest.DateNeeded' name='DateNeeded' type='text' class='form-control col-sm-6' id='prdateneeded' aria-describedby='emailHelp' placeholder="Date Needed">
+	</div>	
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for=''>Delivery Mode:</label>
+		<input [(ngModel)]='purchaserequest.DeliveryMode' name='DeliveryMode' type='text' class='form-control col-sm-6' id='prdeliverymode' aria-describedby='emailHelp' placeholder="Delivery Mode">
+	</div>	
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for='partnumber'>Status ID:</label>
+		<input [(ngModel)]='purchaserequest.StatusID' name='StatusID' type='text' class='form-control col-sm-6' id='prstatusid' aria-describedby='emailHelp' placeholder="Status ID">
+	</div>		
+	<div class='form-group row'>
+		<label class='col-form-label col-sm-2' for=''>Total:</label>
+		<input [(ngModel)]='purchaserequest.Total' name='Total' type='text' class='form-control col-sm-6' id='prtotal' aria-describedby='emailHelp' placeholder="Total">
+	</div>	
+	<div class='form-group'>
+		<button (click)='create()' class='btn btn-primary' title='Add a new purchaserequest'>Add purchaserequest</button>
+	</div>	
+</div>
+</div>
+</div>
+
+
+
+

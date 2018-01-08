@@ -13,7 +13,7 @@ static sortableKeys = ['Id', 'UserID', 'SubmittedDate', 'DateNeeded', 'StatusID'
 	
 	constructor(
 		Id: number = 0,
-		// UserID: number = 0,
+		UserID: number = 0,
 		Description: string = '',
 		Justification: string = '',
 		DateNeeded: Date = null, 
@@ -23,7 +23,7 @@ static sortableKeys = ['Id', 'UserID', 'SubmittedDate', 'DateNeeded', 'StatusID'
 		SubmittedDate: Date = null, 	
 	) {
 		this.Id = Id;
-		// this.UserID = UserID;
+		this.UserID = UserID;
 		this.Description = Description;
 		this.Justification = Justification;
 		this.DateNeeded = DateNeeded;

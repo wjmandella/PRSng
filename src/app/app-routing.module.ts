@@ -22,24 +22,35 @@ import { PurchaseRequestDetailComponent } from './feature/purchaserequest/purcha
 import { PurchaseRequestEditComponent } from './feature/purchaserequest/purchaserequest-edit/purchaserequest-edit.component';
 import { PurchaseRequestCreateComponent } from './feature/purchaserequest/purchaserequest-create/purchaserequest-create.component';
 
+import { PurchaseRequestLineItemCreateComponent } from './feature/purchaserequestlineitem/purchaserequestlineitem-create/purchaserequestlineitem-create.component';
+import { PurchaseRequestLineItemDetailComponent } from './feature/purchaserequestlineitem/purchaserequestlineitem-detail/purchaserequestlineitem-detail.component';
+import { PurchaseRequestLineItemEditComponent } from './feature/purchaserequestlineitem/purchaserequestlineitem-edit/purchaserequestlineitem-edit.component';
+import { PurchaseRequestLineItemListComponent } from './feature/purchaserequestlineitem/purchaserequestlineitem-list/purchaserequestlineitem-list.component';
+
 const routes: Routes = [
+  // { path: '', redirectTo: '/user/list', pathMatch: 'full'},
+  // { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'user/detail/:id', component: UserDetailComponent}, //from more specific to more general
   { path: 'user/edit/:id', component: UserEditComponent},
   { path: 'user/create', component: UserCreateComponent},
   { path: 'user/list', component: UserListComponent},
   { path: 'user/login', component: UserLoginComponent},
-  { path: 'vendor/detail/:id', component: VendorDetailComponent}, //from more specific to more general
+  { path: 'vendor/detail/:id', component: VendorDetailComponent}, 
   { path: 'vendor/edit/:id', component: VendorEditComponent},
   { path: 'vendor/create', component: VendorCreateComponent},
   { path: 'vendor/list', component: VendorListComponent},
-  { path: 'product/detail/:id', component: ProductDetailComponent}, //from more specific to more general
+  { path: 'product/detail/:id', component: ProductDetailComponent}, 
   { path: 'product/edit/:id', component: ProductEditComponent},
   { path: 'product/create', component: ProductCreateComponent},
   { path: 'product/list', component: ProductListComponent},
-  { path: 'purchaserequest/detail/:id', component: PurchaseRequestDetailComponent}, //from more specific to more general
+  { path: 'purchaserequest/detail/:id', component: PurchaseRequestDetailComponent}, 
   { path: 'purchaserequest/edit/:id', component: PurchaseRequestEditComponent},
   { path: 'purchaserequest/create', component: PurchaseRequestCreateComponent},
-  { path: 'purchaserequest/list', component: PurchaseRequestListComponent}  
+  { path: 'purchaserequest/list', component: PurchaseRequestListComponent},
+  { path: 'purchaserequestlineitem/detail/:id', component: PurchaseRequestLineItemDetailComponent}, 
+  { path: 'purchaserequestlineitem/edit/:id', component: PurchaseRequestLineItemEditComponent},
+  { path: 'purchaserequestlineitem/create', component: PurchaseRequestLineItemCreateComponent},
+  { path: 'purchaserequestlineitem/list', component: PurchaseRequestLineItemListComponent},     
 ];
 
 
