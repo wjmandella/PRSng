@@ -1,3 +1,28 @@
-<p>
-  purchaserequestlineitem-detail works!
-</p>
+<app-menu></app-menu>
+<div class='component-content'>
+	<div class=''>
+		<div class='lefthalf'>
+			<span class='component-title'>[{{title}}]</span>
+			<span><a routerLink='/product/create'><img id='createnew' width='20'
+				height="20" src='assets/add-new.png' title='PRLI details'></a>
+			</span>
+		    <span><a routerLink='/purchaserequest/list'>Back to PR list</a></span>	
+		</div>
+<div>		
+<!-- <table *ngIf='product' class="table table-sm"> -->
+<p *ngIf='!prli'>The data is loading....</p>	
+<table class="table table-sm" *ngIf='prli && purchaserequest'>	
+	<tr>Purchase Request ID:<td>{{prli.PurchaseRequestID}}</td></tr>
+	<tr>Line Item ID:<td>{{prli.Id}}</td></tr>
+	<tr>Product ID:<td>{{prli.ProductID}}</td></tr>
+	<tr>Quantity:<td>{{prli.Quantity}}</td></tr>
+<!-- 	<tr>:<td>{{product.PartNumber}}</td></tr>
+	<tr>Name:<td>{{product.Name}}</td></tr>
+	<tr>Price:<td>$ {{product.Price}}</td></tr>
+	<tr>Unit:<td>{{product.Unit}}</td></tr> -->
+	<tr><td colspan="2">
+	<a routerLink='/purchaserequestlineitem/edit/{{prli.Id}}' class='btn btn-primary' title='Edit'>Edit</a>
+	<button (click)="remove()" class='btn btn-danger' title='Delete'>Remove</button>
+	</td></tr>			
+</table>		
+</div>

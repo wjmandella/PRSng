@@ -1,4 +1,4 @@
-<form>
+<!-- <form>
     <table *ngIf='user' style="margin: auto;" style='align-content: center;   border:1px;'>      
         <tr><td>Username:</td><td>   
         <input [(ngModel)]='user.UserName' type="text" name="username" placeholder="Username"> </td></tr>
@@ -7,6 +7,31 @@
        <td class='text-center' colspan="2"><button type='submit' (click)="login()" class='btn btn-primary'>SUBMIT</button></td>
        	<tr><td colspan="2"><label class='text-sm-left'>{{message}}</label></td></tr>
     </table>      
-</form>
-
+</form> -->
+<div class='component-content'>
+	<form class='text-center'>
+		<table *ngIf='user' class='table-sm' style='margin:50px auto;padding: 5px 20px;border:1px solid silver;width:400px;'>
+			<tr class='text-center'>
+				<td colspan="2">Login</td>
+			</tr>
+			<tr>
+				<td>Username:</td>
+				<td><input [(ngModel)]='user.UserName' name='Username' type='text'></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input [(ngModel)]='user.Password' name='Password' type='password'></td>
+			</tr>
+			<tr>
+				<td class='text-center' colspan="2"><button type='submit' (click)="login()" class='btn btn-primary'>Login</button></td>
+			</tr>
+			<tr>
+				<td colspan="2"><label class='text-sm-left'>{{message}}</label></td>
+			</tr>
+<!-- 			<tr>
+				<td colspan="2"><label class='text-sm-left'><a routerLink="/user/forgotpassword">Forgot Password</a></label></td>
+			</tr> -->
+		</table>
+	</form>
+</div>
 

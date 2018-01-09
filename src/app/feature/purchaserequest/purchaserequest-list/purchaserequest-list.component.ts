@@ -16,7 +16,7 @@ import { User } from '@model/user';
 export class PurchaseRequestListComponent implements OnInit {
 
   title: string = 'PurchaseRequest List';
-	selectedSortKey: string = 'id'; //default sort
+	selectedSortKey: string = 'Id'; //default sort
 	sortDesc: string = 'asc'; // can use 'desc' for descending sort
 	sortKeys: string[] = PurchaseRequest.sortableKeys;
 	

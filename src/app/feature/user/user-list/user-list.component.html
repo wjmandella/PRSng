@@ -15,7 +15,7 @@
 		<option *ngFor='let sortKey of sortKeys' value='{{sortKey}}'>{{sortKey}}</option>
 	</select>		
 	<span>Order:</span>
-	<select [(ngModel)]='sortDesc' class='custom-select text-sm-left'>
+	<select [(ngModel)]='sortDesc' class='custom-select text-sm-left' selected='Id'>
 		<option value='asc'>Asc</option>
 		<option value='desc'>Desc</option>
 	</select>

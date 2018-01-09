@@ -1,3 +1,53 @@
-<p>
-  purchaserequestlineitem-create works!
-</p>
+<app-menu></app-menu>
+<div>
+</div><div class='component-content'>
+    <div>
+      <span class='component-title'>[{{title}}]</span>
+            <span><a routerLink='/purchaserequestlineitem/create'><img id='createnew' width='20'
+                height="20" src='assets/add-new.png' title='Create new purchaserequestlineitem'></a>
+            </span>
+      <span><a routerLink='/purchaserequestlineitem/list'>Back to list</a></span>       
+</div>
+<div>
+<!-- <p *ngIf='!purchaserequestlineitem'>Loading ...</p> -->
+<!-- <div *ngIf='purchaserequestlineitem && vendors'> -->
+<div *ngIf='purchaserequestlineitem'>	
+<!--  <div class='form-group row'>
+    <label class='col-form-label col-sm-2' for='purchaserequestlineitemvendor'>Vendor:</label>
+   <div class='col-sm-6 select-list'>
+    <select [(ngModel)]='purchaserequestlineitem.VendorID' [compareWith]='compareFn' class='form-control' name='Vendor' id='purchaserequestlineitem-Vendor'>
+     <option *ngFor="let vendor of vendors" [ngValue]="vendor.Id" [selected]='vendor.Id == purchaserequestlineitem.VendorID'>{{vendor.Name}}</option>
+    </select>
+  </div> -->
+</div>
+<div>
+    <div class='form-group row'>
+        <label class='col-form-label col-sm-2' for='purchaserequestlineitemvendorid'>Purchase Request ID:</label>
+        <label>{{prli.PurchaseRequestID}}</label>
+        <small id='emailHelp' class='form-text text-muted col-sm-2'>Purchase Request ID</small>
+    </div>
+    <div class='form-group row'>
+        <label class='col-form-label col-sm-2' for='partnumber'>Product ID:</label>
+        <input [(ngModel)]='prli.ProductID' name='PartNumber' type='text' class='form-control col-sm-6' aria-describedby='emailHelp' placeholder="Product ID">
+        <small id='emailHelp' class='form-text text-muted col-sm-2'>product ID</small>
+    </div>
+    <div class='form-group row'>
+        <label class='col-form-label col-sm-2' for=''>Quantity:</label>
+        <input [(ngModel)]='prli.Quantity' name='Name' type='text' class='form-control col-sm-6' id='purchaserequestlineitemname' aria-describedby='emailHelp' placeholder="Quantity">
+        <small id='emailHelp' class='form-text text-muted col-sm-2'>Quantity</small>
+    </div>  
+<!--     <div class='form-group row'>
+        <label class='col-form-label col-sm-2' for=''>Price ($US):</label>
+        <input [(ngModel)]='prli.Price' name='Price' type='text' class='form-control col-sm-6' id='price' aria-describedby='emailHelp' placeholder="Price">
+        <small id='emailHelp' class='form-text text-muted col-sm-2'>The price</small>
+    </div>  --> 
+          
+    <div class='form-group'>
+        <button (click)='change()' class='btn btn-primary' title='Update'>Update</button>
+    </div>  
+</div>
+</div>
+</div>
+
+
+

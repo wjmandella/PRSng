@@ -12,7 +12,7 @@ import { Vendor } from '@model/vendor';
 export class ProductListComponent implements OnInit {
 
 	title: string = 'Product List';
-	selectedSortKey: string = 'id'; //default sort
+	selectedSortKey: string = 'Name'; //default sort
 	sortDesc: string = 'asc'; // can use 'desc' for descending sort
 	sortKeys: string[] = Product.sortableKeys;
 	products: Product[];

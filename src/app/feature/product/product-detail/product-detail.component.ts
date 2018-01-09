@@ -14,7 +14,7 @@ export class ProductDetailComponent implements OnInit {
 
 	title: string = 'Product Detail';
 
-	id: string;
+	id: number;
 	resp: any;
 
 	product: Product;
@@ -41,6 +41,10 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit() {
   	this.route.params.subscribe(parms => this.id = parms['id']);
+  	this.ProductSvc.list()
+  		.subscribe(products => {
+  			this.products = products;
+    this.addVendorName(this.products); }); 
   	this.ProductSvc.get(this.id)
   		.subscribe(products => { 
   			this.product = products.length > 0? products[0] : null;
@@ -49,24 +53,13 @@ export class ProductDetailComponent implements OnInit {
   		});
     }
 
- //  ngOnInit() {
- //  	this.ProductSvc.list()
- //  		.subscribe(products => {
- //  			this.products = products;
- //    this.addVendorName(this.products);  
- //  			console.log(products);
- //      });
- //  }
-
- // addVendorName(prods: Product[]) {
- //   for(let prod of prods) {
- //      // console.log("Getting Vendor Name for VendorId: " + prod.cVendorID);
- //      this.VendorSvc.get(prod.VendorID)
- //       .subscribe(vendors => { prod.VendorName = vendors[0].Name;
- //           console.log(prod);
- //         });
- //      //console.log("VendorName Retreived is " + prod.VendorName);
- //     }
- //  }
+	 addVendorName(prods: Product[]) {
+	   for(let prod of prods) {
+	      this.VendorSvc.get(prod.VendorID)	      
+	       .subscribe(if(prod.VendorID == this.id) 
+	       	vendors => { prod.VendorName = vendors[0].Name});
+	         });
+	     }
+	  }
 
 }

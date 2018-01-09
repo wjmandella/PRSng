@@ -19,7 +19,8 @@ import { User } from '@model/user';
 })
 export class PurchaseRequestLineItemListComponent implements OnInit {
 
-    title: string = 'PurchaseRequestLineItem List';
+    title: string = 'Purchase Request';
+    title2: string = 'Line items';
 	  selectedSortKey: string = 'id'; //default sort
 	  sortDesc: string = 'asc'; // can use 'desc' for descending sort
 
@@ -31,8 +32,8 @@ export class PurchaseRequestLineItemListComponent implements OnInit {
   	products: Product[];
     users: User[];
     purchaserequests: PurchaseRequest[]=[];
-    // purchaserequest: PurchaseRequest;
-    pr: PurchaseRequest;
+    purchaserequest: PurchaseRequest;
+    // pr: PurchaseRequest;
 
   constructor(private PurchaseRequestLineItemSvc: PurchaseRequestLineItemService,
 			        private PurchaseRequestSvc: PurchaseRequestService,  	
@@ -46,8 +47,8 @@ export class PurchaseRequestLineItemListComponent implements OnInit {
    selectedPRLIs (prlis: PurchaseRequestLineItem[]) {
        let tempArray: PurchaseRequestLineItem[]=[];
        for (let prli of prlis){
-         if (prli.PurchaseRequestID == this.pr.Id){
-           console.log("Pr ID:", this.pr.Id);
+         if (prli.PurchaseRequestID == this.purchaserequest.Id){
+           console.log("Pr ID:", this.purchaserequest.Id);
            tempArray.push(prli);
          }
        }
@@ -60,8 +61,8 @@ export class PurchaseRequestLineItemListComponent implements OnInit {
      this.route.params.subscribe(parms => this.id = parms ['id']);
      this.PurchaseRequestSvc.get(this.id)
        .subscribe(prs => {
-         this.pr = prs.length > 0 ? prs[0] : null;
-         console.log("This pr:", this.pr);
+         this.purchaserequest = prs.length > 0 ? prs[0] : null;
+         console.log("This pr:", this.purchaserequest);
          this.PurchaseRequestLineItemSvc.list()
            .subscribe(prlis => {
               this.prlis = this.selectedPRLIs(prlis);
