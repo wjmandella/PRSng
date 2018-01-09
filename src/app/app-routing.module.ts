@@ -50,7 +50,7 @@ const routes: Routes = [
   { path: 'purchaserequestlineitem/detail/:id', component: PurchaseRequestLineItemDetailComponent}, 
   { path: 'purchaserequestlineitem/edit/:id', component: PurchaseRequestLineItemEditComponent},
   { path: 'purchaserequestlineitem/create', component: PurchaseRequestLineItemCreateComponent},
-  { path: 'purchaserequestlineitem/list', component: PurchaseRequestLineItemListComponent},     
+  { path: 'purchaserequestlineitem/list/:id', component: PurchaseRequestLineItemListComponent},     
 ];
 
 

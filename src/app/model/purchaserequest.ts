@@ -8,6 +8,7 @@ export class PurchaseRequest {
 	StatusID: number;
 	Total: number;
 	SubmittedDate: Date;
+	UserLastName: string;
 
 static sortableKeys = ['Id', 'UserID', 'SubmittedDate', 'DateNeeded', 'StatusID'];
 	

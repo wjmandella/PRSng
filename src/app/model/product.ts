@@ -2,6 +2,7 @@ export class Product {
 
 	Id: number;
 	VendorID: number ;
+	VendorName: string;
 	PartNumber: string;
 	Name: string;
 	Price: number;

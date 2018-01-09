@@ -1,3 +1,61 @@
-<p>
-  purchaserequestlineitem-list works!
-</p>
+<app-menu></app-menu>
+<div class='component-content'>
+	<div class=''>
+		<div class='lefthalf'>
+			<span class='component-title'>[{{title}}]</span>
+			<span><a routerLink='/purchaserequestlineitem/create'><img id='createnew' width='20'
+				height="20" src='assets/add-new.png' title='Add a new line item'></a>
+			</span>
+		</div>
+	<div class='righthalf input-group'>
+	<span class=''>sort:</span>
+	<select [(ngModel)]='selectedSortKey' class='custom-select text-sm-left'>
+		<option *ngFor='let sortKey of sortKeys' value='{{sortKey}}'>{{sortKey}}</option>
+	</select>		
+	<span>Order:</span>
+	<select [(ngModel)]='sortDesc' class='custom-select text-sm-left'>
+		<option value='asc'>Asc</option>
+		<option value='desc'>Desc</option>
+	</select>
+	</div>
+</div>	
+<div>
+<p *ngIf='!purchaserequest'>The data is loading....</p>
+<table class="table table-sm table-striped">
+	<tr>
+		<th>ID</th>
+		<th>Status</th>
+		<th>Description</th>
+		<th>Total</th>
+	</tr>
+	<tr *ngIf='purchaserequest' >
+		<td>{{purchaserequest.Id}}</td>
+		<td>{{purchaserequest.StatusID}}</td>
+		<td>{{purchaserequest.Description}}</td>
+		<td>{{purchaserequest.Total}}</td>
+		<td class='actions'>
+		 <a routerLink='/purchaserequestlineitem/detail/{{purchaserequest.Id}}'><img src='assets/details.png' title='Details'></a>
+		 <a routerLink='/purchaserequestlineitem/edit/{{purchaserequest.Id}}'><img src='assets/edit.png' title='Edit'></a>
+		<a routerLink='/purchaserequestlineitem/list/{{purchaserequest.Id}}'><img src='assets/lines.png' title='Add line items'></a>
+		</td>	 
+	</tr>		
+</table>
+<p></p>
+<!-- <p *ngIf='!purchaserequest'>The data is loading....</p> -->
+<table class="table table-sm table-striped">
+	<tr>
+		<th>ID</th>
+		<th>Product ID</th>
+		<th>Quantity</th>
+<!-- 		<th>Subtotal</th> -->
+	</tr>
+<!-- 	<tr *ngFor='let prli of prlis' value='{{prli}}'> -->
+	<tr *ngFor='let prli of prlis'>		
+		<td>{{prli.Id}}</td>
+		<td>{{prli.ProductID}}</td>
+		<td>{{prli.Quantity}}</td>
+	</tr>		
+</table>
+
+</div>	
+

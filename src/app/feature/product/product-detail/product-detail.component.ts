@@ -18,6 +18,9 @@ export class ProductDetailComponent implements OnInit {
 	resp: any;
 
 	product: Product;
+	products: Product[];
+	vendors: Vendor[];
+
 
 	remove() {
 		console.log("this.product.id", this.product.Id);
@@ -32,6 +35,7 @@ export class ProductDetailComponent implements OnInit {
 
 
   constructor(private ProductSvc: ProductService,
+  		      private VendorSvc: VendorService,
   			  private router: Router,
   			  private route: ActivatedRoute) { }
 
@@ -40,8 +44,29 @@ export class ProductDetailComponent implements OnInit {
   	this.ProductSvc.get(this.id)
   		.subscribe(products => { 
   			this.product = products.length > 0? products[0] : null;
+  			this.product.VendorName;
   			console.log(this.product);
   		});
-  }
+    }
+
+ //  ngOnInit() {
+ //  	this.ProductSvc.list()
+ //  		.subscribe(products => {
+ //  			this.products = products;
+ //    this.addVendorName(this.products);  
+ //  			console.log(products);
+ //      });
+ //  }
+
+ // addVendorName(prods: Product[]) {
+ //   for(let prod of prods) {
+ //      // console.log("Getting Vendor Name for VendorId: " + prod.cVendorID);
+ //      this.VendorSvc.get(prod.VendorID)
+ //       .subscribe(vendors => { prod.VendorName = vendors[0].Name;
+ //           console.log(prod);
+ //         });
+ //      //console.log("VendorName Retreived is " + prod.VendorName);
+ //     }
+ //  }
 
 }

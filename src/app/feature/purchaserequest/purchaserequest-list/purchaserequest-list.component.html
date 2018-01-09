@@ -25,7 +25,7 @@
 	<tr>
 		<th>ID</th>
 		<th>Status</th>
-		<th>User ID</th>
+		<th>User</th>
 		<th>Descr</th>
 		<th>Justification</th>
 		<th>Date Needed</th>
@@ -35,7 +35,7 @@
 	<tr *ngFor='let purchaserequest of purchaserequests | sort:selectedSortKey:sortDesc'>
 		<td>{{purchaserequest.Id}}</td>
 		<td>{{purchaserequest.StatusID}}</td>
-		<td>{{purchaserequest.UserID}}</td>
+		<td>{{purchaserequest.UserLastName}}</td>
 		<td>{{purchaserequest.Description}}</td>
 		<td>{{purchaserequest.Justification}}</td>
 		<td>{{purchaserequest.DateNeeded | date}}</td>		
@@ -44,7 +44,8 @@
 		<td class='actions'>
 		 <a routerLink='/purchaserequest/detail/{{purchaserequest.Id}}'><img src='assets/details.png' title='Details'></a>
 		 <a routerLink='/purchaserequest/edit/{{purchaserequest.Id}}'><img src='assets/edit.png' title='Edit'></a>
-		</td>	
+		<a routerLink='/purchaserequestlineitem/list/{{purchaserequest.Id}}'><img src='assets/lines.png' title='Add line items'></a>
+		</td>	 
 	</tr>		
 </table>
 </div>	

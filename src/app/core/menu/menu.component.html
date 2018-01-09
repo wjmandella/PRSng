@@ -1,7 +1,11 @@
-<nav>
+<div>
+	<div class='lefthalf'>
+		<nav>
 	<ul>
 		<li *ngFor='let menu of menuItems' title='{{menu.tooltip}}'>
 			<a routerLink='{{menu.href}}'>{{menu.display}}</a>
 		</li>
 	</ul>
 </nav>
+</div>
+</div>
