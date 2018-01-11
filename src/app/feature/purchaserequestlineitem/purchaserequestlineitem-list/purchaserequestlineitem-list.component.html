@@ -35,7 +35,7 @@
 	<div class=''>
 		<div>
 			<span class='component-title'>[{{title2}}]</span>
-			<span><a routerLink='/purchaserequestlineitem/create'><img id='createnew' width='20'
+			<span *ngIf='purchaserequest'><a routerLink='/purchaserequestlineitem/create/{{purchaserequest.Id}}'><img id='createnew' width='20'
 				height="20" src='assets/add-new.png' title='Add a new line item'></a>
 			</span>
 		</div>
@@ -54,6 +54,7 @@
 		<td>{{prli.ProductID}}</td>
 		<td>{{prli.Quantity}}</td>
 		<td>                 </td>
+	<!-- 	<td>{{prli.Product.Price * prli.Quantity}}</td> -->
 		<td class='actions'>
 		 <a routerLink='/purchaserequestlineitem/detail/{{prli.Id}}/{{purchaserequest.Id}}'><img src='assets/details.png' title='Details'></a>
 <!-- 		 <a routerLink='/purchaserequestlineitem/edit/{{purchaserequest.Id}}'><img src='assets/edit.png' title='Edit'></a> -->

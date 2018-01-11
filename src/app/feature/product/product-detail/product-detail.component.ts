@@ -44,7 +44,8 @@ export class ProductDetailComponent implements OnInit {
   	this.ProductSvc.list()
   		.subscribe(products => {
   			this.products = products;
-    this.addVendorName(this.products); }); 
+    // this.addVendorName(this.products); 
+	}); 
   	this.ProductSvc.get(this.id)
   		.subscribe(products => { 
   			this.product = products.length > 0? products[0] : null;
@@ -53,13 +54,13 @@ export class ProductDetailComponent implements OnInit {
   		});
     }
 
-	 addVendorName(prods: Product[]) {
-	   for(let prod of prods) {
-	      this.VendorSvc.get(prod.VendorID)	      
-	       .subscribe(if(prod.VendorID == this.id) 
-	       	vendors => { prod.VendorName = vendors[0].Name});
-	         });
-	     }
-	  }
+	 // addVendorName(prods: Product[]) {
+	 //   for(let prod of prods) {
+	 //      this.VendorSvc.get(prod.VendorID)	      
+	 //       .subscribe(if(prod.VendorID == this.id) 
+	 //       	vendors => { prod.VendorName = vendors[0].Name});
+	 //         });
+	 //     }
+	 //  }
 
 }

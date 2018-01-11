@@ -8,7 +8,7 @@ export class PurchaseRequestLineItem {
 		Id: number = 0,
 		PurchaseRequestID: number = 0,
 		ProductID: number = 0,
-		Quantity: number = 0	
+		Quantity: number = 1	
 	) {
 		this.Id = Id;
 		this.PurchaseRequestID = PurchaseRequestID;

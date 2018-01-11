@@ -9,45 +9,53 @@
       <span><a routerLink='/purchaserequestlineitem/list'>Back to list</a></span>       
 </div>
 <div>
-<!-- <p *ngIf='!purchaserequestlineitem'>Loading ...</p> -->
-<!-- <div *ngIf='purchaserequestlineitem && vendors'> -->
-<div *ngIf='purchaserequestlineitem'>	
-<!--  <div class='form-group row'>
-    <label class='col-form-label col-sm-2' for='purchaserequestlineitemvendor'>Vendor:</label>
+
+<!-- original product edit code
+<p *ngIf='!product'>Loading ...</p>
+<div *ngIf='product && vendors'>
+ <div class='form-group row'>
+    <label class='col-form-label col-sm-2' for='productvendor'>Vendor:</label>
    <div class='col-sm-6 select-list'>
-    <select [(ngModel)]='purchaserequestlineitem.VendorID' [compareWith]='compareFn' class='form-control' name='Vendor' id='purchaserequestlineitem-Vendor'>
-     <option *ngFor="let vendor of vendors" [ngValue]="vendor.Id" [selected]='vendor.Id == purchaserequestlineitem.VendorID'>{{vendor.Name}}</option>
+    <select [(ngModel)]='product.VendorID' [compareWith]='compareFn' class='form-control' name='Vendor' id='product-Vendor'>
+     <option *ngFor="let vendor of vendors" [ngValue]="vendor.Id" [selected]='vendor.Id == product.VendorID'>{{vendor.Name}}</option>
     </select>
-  </div> -->
-</div>
+  </div>
+</div> 
+end of original product edit code-->
+
+
+
+
+<span style='text-align:right; font-size: 1.25em; font-weight: 600; margin-left: 1em;'> 
 <div>
     <div class='form-group row'>
-        <label class='col-form-label col-sm-2' for='purchaserequestlineitemvendorid'>Purchase Request ID:</label>
-        <label>{{prli.PurchaseRequestID}}</label>
-        <small id='emailHelp' class='form-text text-muted col-sm-2'>Purchase Request ID</small>
+        <p class='col-form-label col-sm-6' for='purchaserequestlineitemvendorid' style='font-size: 20px; font-weight: bolder; text-align: left'>Add line item for Purchase Request ID: #{{purchaserequest.Id}}</p>
+   </div>
+    <div *ngIf='prli'>
+    <div class='form-group row' >
+        <label class='col-form-label col-sm-2' for="purchaserequest-Product">Product | (Vendor):</label>
+        <div class=' col-sm-6 select-list'  >
+            <select [(ngModel)]='prli.ProductID' class='form-control' name='ProductID' id="purchaserequest-ProductID">
+                <option *ngFor="let pdt of products" [ngValue]="pdt.Id" >{{pdt.Name}} | (Vendor: {{pdt.VendorName}}, Price: {{pdt.Price | currency}})</option>
+            </select>
+        </div>
     </div>
+    </div>   
     <div class='form-group row'>
-        <label class='col-form-label col-sm-2' for='partnumber'>Product ID:</label>
-        <input [(ngModel)]='prli.ProductID' name='PartNumber' type='text' class='form-control col-sm-6' aria-describedby='emailHelp' placeholder="Product ID">
-        <small id='emailHelp' class='form-text text-muted col-sm-2'>product ID</small>
-    </div>
+        <label class='col-form-label col-sm-2' for='productID'>Product ID:</label>
+        <input [(ngModel)]='prli.ProductID' name='ProductID' type='text' class='form-control col-sm-1' aria-describedby='emailHelp' placeholder="Product ID" readonly>
+    </div>   
     <div class='form-group row'>
         <label class='col-form-label col-sm-2' for=''>Quantity:</label>
-        <input [(ngModel)]='prli.Quantity' name='Name' type='text' class='form-control col-sm-6' id='purchaserequestlineitemname' aria-describedby='emailHelp' placeholder="Quantity">
-        <small id='emailHelp' class='form-text text-muted col-sm-2'>Quantity</small>
-    </div>  
-<!--     <div class='form-group row'>
-        <label class='col-form-label col-sm-2' for=''>Price ($US):</label>
-        <input [(ngModel)]='prli.Price' name='Price' type='text' class='form-control col-sm-6' id='price' aria-describedby='emailHelp' placeholder="Price">
-        <small id='emailHelp' class='form-text text-muted col-sm-2'>The price</small>
-    </div>  --> 
-          
+        <input [(ngModel)]='prli.Quantity' name='Name' type='text' class='form-control col-sm-1' id='purchaserequestlineitemname' aria-describedby='emailHelp' placeholder="Quantity">
+     </div>  
+</div>
+
+</span>          
     <div class='form-group'>
-        <button (click)='change()' class='btn btn-primary' title='Update'>Update</button>
+        <button (click)='create()' class='btn btn-primary' title='Create'>Add line item</button>
     </div>  
 </div>
 </div>
-</div>
-
-
+<!-- </div> -->
 

@@ -3,8 +3,9 @@
 </div><div class='component-content'>
 	<div>
 	  <span class='component-title'>[{{title}}]</span>
-			<span><a routerLink='/purchaserequest/create'><img id='createnew' width='20'
-				height="20" src='assets/add-new.png' title='Create new purchaserequest'></a>
+			<span>
+			<a routerLink='/purchaserequest/create'>
+			<img id='createnew' width='20' height="20" src='assets/add-new.png' title='Create new purchaserequest'></a>
 			</span>
 	  <span><a routerLink='/purchaserequest/list'>Back to list</a></span>		
 </div>
@@ -13,10 +14,14 @@
 
 <div *ngIf='purchaserequest'>
 <!-- 	<div>User ID:</div> -->
-	<div class='form-group row'>
-		<label class='col-form-label col-sm-2' for='partnumber'>User ID:</label>
-		<input [(ngModel)]='purchaserequest.UserID' name='UserID' type='text' class='form-control col-sm-6' id='pruserid' aria-describedby='emailHelp' placeholder="User ID">
-	</div>	
+<div class='form-group row' >
+            <label class='col-form-label col-sm-2' for="purchaserequestuser">User:</label>
+            <div class=' col-sm-6 select-list'>
+                <select [(ngModel)]='purchaserequest.UserID' [compareWith]='compareFn' class='form-control' name='User' id="purchaserequest-User" disabled="disabled">
+                    <option *ngFor="let user of users" [ngValue]="user.Id" [selected]="purchaserequest.UserID == user.Id">{{user.FirstName}} {{user.LastName}}</option>
+                </select>
+            </div>
+        </div>	
 	<div class='form-group row'>
 		<label class='col-form-label col-sm-2' for='purchaserequestvendorid'>Description:</label>
 		<input [(ngModel)]='purchaserequest.Description' name='Description' type='text' class='form-control col-sm-6' id='prdescription' aria-describedby='emailHelp' placeholder="Description">
@@ -35,11 +40,11 @@
 	</div>	
 	<div class='form-group row'>
 		<label class='col-form-label col-sm-2' for='partnumber'>Status ID:</label>
-		<input [(ngModel)]='purchaserequest.StatusID' name='StatusID' type='text' class='form-control col-sm-6' id='prstatusid' aria-describedby='emailHelp' placeholder="Status ID">
+		<input [(ngModel)]='purchaserequest.StatusID' name='StatusID' type='text' class='form-control col-sm-6' id='prstatusid' aria-describedby='emailHelp' placeholder="Status ID" readonly>
 	</div>		
 	<div class='form-group row'>
 		<label class='col-form-label col-sm-2' for=''>Total:</label>
-		<input [(ngModel)]='purchaserequest.Total' name='Total' type='text' class='form-control col-sm-6' id='prtotal' aria-describedby='emailHelp' placeholder="Total">
+		<input [(ngModel)]='purchaserequest.Total' name='Total' type='text' class='form-control col-sm-6' id='prtotal' aria-describedby='emailHelp' placeholder="Total" readonly>
 	</div>	
 	<div class='form-group'>
 		<button (click)='create()' class='btn btn-primary' title='Add a new purchaserequest'>Add purchaserequest</button>

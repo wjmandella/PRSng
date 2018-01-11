@@ -23,18 +23,18 @@
 <p *ngIf='!purchaserequests'>The data is loading....</p>
 <table class="table table-sm table-striped" *ngIf='purchaserequests'>
 	<tr>
-		<th>ID</th>
-		<th>Status</th>
+		<th style='text-align: center'>ID</th>
+		<th style='text-align: center'>Status</th>
 		<th>User</th>
-		<th>Descr</th>
+		<th>Description</th>
 		<th>Justification</th>
 		<th>Date Needed</th>
 		<th>Submitted Date</th>		
 		<th>Total</th>
 	</tr>
 	<tr *ngFor='let purchaserequest of purchaserequests | sort:selectedSortKey:sortDesc'>
-		<td>{{purchaserequest.Id}}</td>
-		<td>{{purchaserequest.StatusID}}</td>
+		<td style='text-align: center'>{{purchaserequest.Id}}</td>
+		<td style='text-align: center'>{{purchaserequest.StatusID}}</td>
 		<td>{{purchaserequest.UserLastName}}</td>
 		<td>{{purchaserequest.Description}}</td>
 		<td>{{purchaserequest.Justification}}</td>

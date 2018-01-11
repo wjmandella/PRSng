@@ -12,6 +12,7 @@
 <p *ngIf='!user'>Loading ...</p>
 
 <div *ngIf='user'>
+<span style='text-align:right; font-size: 1.25em; font-weight: 600; margin-left: 1em;'>	
 	<div class='form-group row'>
 		<label class='col-form-label col-sm-2' for='userfirstname'>First name:</label>
 		<input [(ngModel)]='user.FirstName' name='FirstName' type='text' class='form-control col-sm-6' id='userfirstname' aria-describedby='emailHelp' placeholder="First Name">
@@ -22,11 +23,13 @@
 	</div>
 	<div class='form-group row'>
 		<label class='col-form-label col-sm-2' for=''>Username:</label>
-		<input [(ngModel)]='user.UserName' name='UserName' type='text' class='form-control col-sm-6' id='username' aria-describedby='emailHelp' placeholder="Username">
+		<input [(ngModel)]='user.UserName' name='UserName' type='text' class='form-control col-sm-6' id='username' aria-describedby='emailHelp' 
+		placeholder="Username  (20 character limit)">
 	</div>	
 	<div class='form-group row'>
 		<label class='col-form-label col-sm-2' for=''>Password:</label>
-		<input [(ngModel)]='user.Password' name='Password' type='text' class='form-control col-sm-6' id='password' aria-describedby='emailHelp' placeholder="Password">
+		<input [(ngModel)]='user.Password' name='Password' type='text' class='form-control col-sm-6' id='password' aria-describedby='emailHelp' 
+		placeholder="Password  (10 character limit)">
 	</div>	
 	<div class='form-group row'>
 		<label class='col-form-label col-sm-2' for=''>Phone number:</label>
@@ -48,9 +51,11 @@
 		<label class='col-form-label col-sm-2' for='userreviewer'>Active:</label>
 		<input [(ngModel)]='user.Active' name='Active' type='checkbox' class='form-control col-sm-6 inputcheckbox' id='useractive' aria-describedby='emailHelp' placeholder="Active">
 	</div>
-	<div class='form-group'>
+</span>	
+	<div class='form-group' colspan="2">
 		<button (click)='create()' class='btn btn-primary' title='Update'>Create User</button>
 	</div>	
+		
 </div>
 </div>
 </div>

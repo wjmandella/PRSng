@@ -48,5 +48,7 @@ export class PurchaseRequestListComponent implements OnInit {
            });
        }
     }
+
+      setStatus
    
 }

@@ -9,6 +9,7 @@ export class PurchaseRequest {
 	Total: number;
 	SubmittedDate: Date;
 	UserLastName: string;
+	UserName: string;
 
 static sortableKeys = ['Id', 'UserID', 'SubmittedDate', 'DateNeeded', 'StatusID'];
 	
@@ -19,7 +20,7 @@ static sortableKeys = ['Id', 'UserID', 'SubmittedDate', 'DateNeeded', 'StatusID'
 		Justification: string = '',
 		DateNeeded: Date = null, 
 		DeliveryMode: string = '', 
-		StatusID: number = 0,
+		StatusID: number = 1,
 		Total: number = 0,				
 		SubmittedDate: Date = null, 	
 	) {
