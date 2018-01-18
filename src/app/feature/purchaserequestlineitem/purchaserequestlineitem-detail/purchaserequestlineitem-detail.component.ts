@@ -29,12 +29,12 @@ export class PurchaseRequestLineItemDetailComponent implements OnInit {
 	prid: number;
 	prlis: PurchaseRequestLineItem[] = [];
 	prli: PurchaseRequestLineItem; 
-    users: User[];
-    purchaserequests: PurchaseRequest[]=[];
-    purchaserequest: PurchaseRequest;
+  users: User[];
+  purchaserequests: PurchaseRequest[]=[];
+  purchaserequest: PurchaseRequest;
 
   constructor(private PurchaseRequestLineItemSvc: PurchaseRequestLineItemService,
-			  private PurchaseRequestSvc: PurchaseRequestService,  	
+			        private PurchaseRequestSvc: PurchaseRequestService,  	
               private VendorSvc: VendorService,
               private ProductSvc: ProductService,
               private router: Router,

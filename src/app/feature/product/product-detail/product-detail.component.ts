@@ -33,6 +33,17 @@ export class ProductDetailComponent implements OnInit {
 			});
 	}
 
+	// **code from user-detail
+	// remove() {
+	// 	console.log("this.user.id", this.user.Id);
+	// 	this.UserSvc.remove(this.user.Id)
+	// 		.subscribe(resp => {
+	// 			this.resp = resp;
+	// 			console.log("User-Detail-Remove: User (ID:" 
+	// 				+this.user.Id+", " +this.user.LastName+") removed", this.resp);
+	// 			this.router.navigate(['/user/list']);		
+	// 		});
+	// }
 
   constructor(private ProductSvc: ProductService,
   		      private VendorSvc: VendorService,

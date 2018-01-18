@@ -26,7 +26,8 @@ export class PurchaseRequestCreateComponent implements OnInit {
 		this.PurchaseRequestSvc.create(this.purchaserequest)
 			.subscribe(resp => {
 				this.resp = resp;
-				this.router.navigate(['/purchaserequest/list']);		
+				this.router.navigate(['/purchaserequest/list']);	
+        // this.router.navigate(['/purchaserequestlineitem/list/:id']);        	
 			});
 	}
 

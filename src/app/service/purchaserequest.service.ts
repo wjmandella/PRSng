@@ -25,6 +25,10 @@ export class PurchaseRequestService {
 		return this.http.post(url+"Change", purchaserequest) as Observable<any>;
 	}
 
+	submitForReview(purchaserequest: PurchaseRequest): Observable<any> {
+		return this.http.post(url+"SubmitForReview", purchaserequest) as Observable<any>;
+	}
+
 	remove(id): Observable<any> {
 		return this.http.get(url+"Remove?id="+id) as Observable<any>;
 	}

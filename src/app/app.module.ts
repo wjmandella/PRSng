@@ -45,6 +45,7 @@ import { PurchaseRequestLineItemService } from './service/purchaserequestlineite
 
 import { StatusService } from './service/status.service';
 import { SystemService } from './service/system.service';
+import { HomeComponent } from './core/home/home.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { SystemService } from './service/system.service';
     PurchaseRequestLineItemCreateComponent,
     PurchaseRequestLineItemDetailComponent,
     PurchaseRequestLineItemEditComponent,
-    PurchaseRequestLineItemListComponent
+    PurchaseRequestLineItemListComponent,
+    HomeComponent
    ],
   imports: [
     BrowserModule,
